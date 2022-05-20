@@ -12,15 +12,29 @@ duplicateCharMinCount("What about a longer string?", 3) // ["a", "t", " "]
 ***********************************************************************/
 
 function countCharacters(string) {
-	// Your code here
-
-
+	
 }
 
 function duplicateCharMinCount(string, minCount) {
-	// Your code here
+	let newArr = []
+	let strArr = string.split("")
+	
+	for (let i = 0; i < strArr.length; i++){
+		let letter = strArr[i]
+		let count = 1
 
-
+		for (let j = i + 1; j < strArr.length; j++){
+			let letter2 = strArr[j]
+			
+			if (letter === letter2){
+				count++
+				if((count >= minCount) && !newArr.includes(letter)){
+					newArr.push(letter)
+				}
+			}
+		}
+	}
+	return newArr
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
