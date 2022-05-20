@@ -15,8 +15,17 @@ You may not use Array's `map()`, `filter()`, or `forEach()` methods.
 ***********************************************************************/
 
 function pickyMyMap(arr, cb) {
-	// Your code here
+	let newArr = []
 
+	for (let i = 0; i < arr.length; i++) {
+		let item = arr[i]
+
+		if (cb(item)) {
+			newArr.push(cb(item))
+		}
+	}
+
+	return newArr
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
